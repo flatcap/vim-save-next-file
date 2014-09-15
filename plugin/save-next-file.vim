@@ -20,7 +20,7 @@ function! s:SaveNextFile()
 	if (empty(number))
 		let stem   = expand('%:r')
 		let suffix = expand('%:e')
-		let newnum = 1
+		let newnum = 2
 
 		if (!empty (suffix))
 			let suffix = '.'.suffix
