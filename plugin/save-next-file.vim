@@ -1,11 +1,15 @@
-" Copyright 2014 Richard Russon (flatcap)
-" NextFile -- Increase the file's suffix number and save it
+" save-next-file.vim - Increase the file's suffix number and save it
+" Author:       Rich Russon (flatcap) <rich@flatcap.org>
+" Website:      https://flatcap.org
+" Copyright:    2014-2015 Richard Russon
+" License:      GPLv2+
+" Version:      1.0
 
 " Before	After
 " ------------------------
-" file		file1
+" file		file2
 " file99	file100
-" file.cpp	file1.cpp
+" file.cpp	file2.cpp
 " file3.cpp	file4.cpp
 
 function! s:get_number(str)

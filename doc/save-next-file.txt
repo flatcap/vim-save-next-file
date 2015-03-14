@@ -1,0 +1,34 @@
+*save-next-file.txt*  Increase the file's suffix number and save it
+
+Author:  Richard Russon (flatcap) <rich@flatcap.org>
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                            *save-next-file*
+
+Imagine you're working on a file and you want to quickly save a new copy.
+This plugin will take the filename and generate a new name.
+
+The old file will remain unchanged from the last, manual, save.
+The new file will contain the, previously, unsaved changes.
+
+EXAMPLES                                                *save-next-file-examples*
+
+  Before     After~
+  file       file2
+  file99     file100
+  file.cpp   file2.cpp
+  file3.cpp  file4.cpp
+
+MAPPING                                                 *save-next-file-mapping*
+
+  nmap <silent> <F9> <Plug>SaveNextFile
+
+ABOUT                                                   *save-next-file-about*
+
+Grab the latest version or report a bug on GitHub:
+
+http://github.com/flatcap/vim-save-next-file
+
+ vim:tw=78:ts=4:sw=4:et:ft=help:norl:
