@@ -12,6 +12,11 @@
 " file.cpp	file2.cpp
 " file3.cpp	file4.cpp
 
+if exists("g:loaded_save_next_file") || &cp || v:version < 700
+	finish
+endif
+let g:loaded_save_next_file = 1
+
 function! s:get_number(str)
 	return substitute (a:str, '^.*[^0-9]', '', '')
 endfunction
@@ -43,3 +48,4 @@ endfunction
 
 nnoremap <silent> <Plug>SaveNextFile :call <SID>SaveNextFile()<CR>
 
+" vim:set noet ts=8 sw=8:
