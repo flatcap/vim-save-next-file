@@ -2,15 +2,15 @@
 " Author:       Rich Russon (flatcap) <rich@flatcap.org>
 " Website:      https://flatcap.org
 " Copyright:    2014-2015 Richard Russon
-" License:      Same as vim, see :help license
+" License:      GPLv3 <http://fsf.org/>
 " Version:      1.0
 
-" Before	After
+" Before        After
 " ------------------------
-" file		file2
-" file99	file100
-" file.cpp	file2.cpp
-" file3.cpp	file4.cpp
+" file          file2
+" file99        file100
+" file.cpp      file2.cpp
+" file3.cpp     file4.cpp
 
 if exists("g:loaded_save_next_file") || &cp || v:version < 700
 	finish
