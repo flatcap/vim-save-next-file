@@ -5,6 +5,11 @@
 " License:      GPLv3 <http://fsf.org/>
 " Version:      1.0
 
+if (exists ('g:loaded_save_next_file') || &cp || (v:version < 700))
+	finish
+endif
+let g:loaded_save_next_file = 1
+
 " Before        After
 " ------------------------
 " file          file2
@@ -12,39 +17,35 @@
 " file.cpp      file2.cpp
 " file3.cpp     file4.cpp
 
-if exists("g:loaded_save_next_file") || &cp || v:version < 700
-	finish
-endif
-let g:loaded_save_next_file = 1
-
-function! s:get_number(str)
+function! s:get_number (str)
 	return substitute (a:str, '^.*[^0-9]', '', '')
 endfunction
 
 function! s:SaveNextFile()
-	let file   = expand('%')
-	let suffix = ''
-	let number = s:get_number(file)
+	let l:file   = expand ('%')
+	let l:suffix = ''
+	let l:number = s:get_number (l:file)
 
-	if (empty(number))
-		let stem   = expand('%:r')
-		let suffix = expand('%:e')
-		let newnum = 2
+	if (empty (l:number))
+		let l:stem   = expand ('%:r')
+		let l:suffix = expand ('%:e')
+		let l:newnum = 2
 
-		if (!empty (suffix))
-			let suffix = '.'.suffix
-			let number = s:get_number (stem)
-			if (!empty (number))
-				let stem   = strpart(stem, 0, len(stem)-len(number))
-				let newnum = number+1
+		if (!empty (l:suffix))
+			let l:suffix = '.' . l:suffix
+			let l:number = s:get_number (l:stem)
+			if (!empty (l:number))
+				let l:stem   = strpart (l:stem, 0, len (l:stem) - len (l:number))
+				let l:newnum = l:number + 1
 			endif
 		endif
 	else
-		let stem   = strpart(file, 0, len(file)-len(number))
-		let newnum = number+1
+		let l:stem   = strpart (l:file, 0, len (l:file) - len (l:number))
+		let l:newnum = l:number + 1
 	endif
-	execute 'saveas '.stem.newnum.suffix
+	execute 'saveas ' . l:stem . l:newnum . l:suffix
 endfunction
+
 
 nnoremap <silent> <Plug>SaveNextFile :call <SID>SaveNextFile()<CR>
 
