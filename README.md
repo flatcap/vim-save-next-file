@@ -1,4 +1,4 @@
-# vim-save-next-file.vim
+# save-next-file.vim
 
 SaveNextFile creates a new file with a new, higher, numeric suffix.
 
@@ -23,9 +23,8 @@ The new file will contain the, previously, unsaved changes.
 
 ## License
 
-Copyright (c) Richard Russon (flatcap).
-Distributed under the same terms as Vim itself.
-See `:help license`.
+Copyright &copy; Richard Russon (flatcap).
+Distributed under the GPLv3 <http://fsf.org/>
 
 ## See also
 
