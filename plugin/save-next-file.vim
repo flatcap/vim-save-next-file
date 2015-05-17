@@ -49,4 +49,3 @@ endfunction
 
 nnoremap <silent> <Plug>SaveNextFile :call <SID>SaveNextFile()<CR>
 
-" vim:set noet ts=8 sw=8:
