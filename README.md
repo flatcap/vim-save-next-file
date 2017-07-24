@@ -8,6 +8,8 @@ This plugin will take the filename and generate a new name.
 The old file will remain unchanged from the last, manual, save.
 The new file will contain the, previously, unsaved changes.
 
+Note: Existing files will be skipped.
+
 ## Examples
 
 | Before    | After      |

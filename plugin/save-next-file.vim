@@ -1,9 +1,9 @@
 " save-next-file.vim - Increase the file's suffix number and save it
 " Author:       Rich Russon (flatcap) <rich@flatcap.org>
 " Website:      https://flatcap.org
-" Copyright:    2014-2015 Richard Russon
+" Copyright:    2014-2017 Richard Russon
 " License:      GPLv3 <http://fsf.org/>
-" Version:      1.0
+" Version:      1.1
 
 if (exists ('g:loaded_save_next_file') || &cp || (v:version < 700))
 	finish
@@ -43,6 +43,13 @@ function! s:SaveNextFile()
 		let l:stem   = strpart (l:file, 0, len (l:file) - len (l:number))
 		let l:newnum = l:number + 1
 	endif
+	
+	let l:filename = l:stem . l:newnum . l:suffix
+	while (filereadable(l:filename))
+		let l:newnum = l:newnum + 1
+		let l:filename = l:stem . l:newnum . l:suffix
+	endwhile
+
 	execute 'saveas ' . l:stem . l:newnum . l:suffix
 endfunction
 
