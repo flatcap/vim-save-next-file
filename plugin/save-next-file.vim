@@ -51,10 +51,17 @@ function! s:SaveNextFile() abort
 	endif
 	
 	let l:filename = l:stem . l:newnum . l:suffix
-	while (filereadable(l:filename))
+	let l:max = l:newnum + 10000
+	while (filereadable(l:filename)) && (l:newnum < l:max)
 		let l:newnum = l:newnum + 1
 		let l:filename = l:stem . l:newnum . l:suffix
 	endwhile
+	if (l:newnum >= l:max)
+		echohl ErrorMsg
+		echo 'SaveNextFile: could not find an available filename'
+		echohl None
+		return
+	endif
 
 	execute 'saveas ' . fnameescape(l:filename)
 endfunction
