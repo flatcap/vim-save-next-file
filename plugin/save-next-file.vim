@@ -17,11 +17,11 @@ let g:loaded_save_next_file = 1
 " file.cpp      file2.cpp
 " file3.cpp     file4.cpp
 
-function! s:get_number (str)
+function! s:get_number (str) abort
 	return substitute (a:str, '^.*[^0-9]', '', '')
 endfunction
 
-function! s:SaveNextFile()
+function! s:SaveNextFile() abort
 	let l:file   = expand ('%')
 	let l:suffix = ''
 	let l:number = s:get_number (l:file)
