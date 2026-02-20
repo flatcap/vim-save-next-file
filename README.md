@@ -10,10 +10,30 @@ The new file will contain the, previously, unsaved changes.
 
 Note: Existing files will be skipped.
 
+After saving, the current buffer switches to the new file.
+The old file remains unchanged on disk.
+
+This plugin works with both Vim and Neovim.
+
+## Installation
+
+Using [vim-plug](https://github.com/junegunn/vim-plug):
+
+```vim
+Plug 'flatcap/vim-save-next-file'
+```
+
+Using Vim's native packages:
+
+```sh
+git clone https://github.com/flatcap/vim-save-next-file \
+  ~/.vim/pack/plugins/start/vim-save-next-file
+```
+
 ## Examples
 
 | Before    | After      |
-| ----------|----------- |
+| :-------- | :--------- |
 | file      | file2      |
 | file99    | file100    |
 | file.cpp  | file2.cpp  |
@@ -21,11 +41,13 @@ Note: Existing files will be skipped.
 
 ## Mapping
 
+Map `<Plug>SaveNextFile` to a key of your choice, for example:
+
     nmap <silent> <F9> <Plug>SaveNextFile
 
 ## License
 
-Copyright &copy; Richard Russon (flatcap).
+Copyright &copy; 2014-2026 Richard Russon (flatcap).
 Distributed under the GPLv3 <http://fsf.org/>
 
 ## See also

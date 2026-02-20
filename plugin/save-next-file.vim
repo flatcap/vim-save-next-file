@@ -1,7 +1,7 @@
 " save-next-file.vim - Increase the file's suffix number and save it
 " Author:       Rich Russon (flatcap) <rich@flatcap.org>
 " Website:      https://flatcap.org
-" Copyright:    2014-2017 Richard Russon
+" Copyright:    2014-2026 Richard Russon
 " License:      GPLv3 <http://fsf.org/>
 " Version:      1.1
 
