@@ -56,7 +56,7 @@ function! s:SaveNextFile() abort
 		let l:filename = l:stem . l:newnum . l:suffix
 	endwhile
 
-	execute 'saveas ' . l:stem . l:newnum . l:suffix
+	execute 'saveas ' . fnameescape(l:filename)
 endfunction
 
 
