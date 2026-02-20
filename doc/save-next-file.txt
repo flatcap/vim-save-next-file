@@ -15,6 +15,18 @@ The new file will contain the, previously, unsaved changes.
 
 Note: Existing files will be skipped.
 
+After saving, the current buffer switches to the new file.
+The old file remains unchanged on disk.
+
+INSTALLATION                                            *save-next-file-install*
+
+Using vim-plug: >
+  Plug 'flatcap/vim-save-next-file'
+
+Using Vim's native packages: >
+  git clone https://github.com/flatcap/vim-save-next-file \
+    ~/.vim/pack/plugins/start/vim-save-next-file
+
 EXAMPLES                                                *save-next-file-examples*
 
   Before     After~
@@ -31,6 +43,6 @@ ABOUT                                                   *save-next-file-about*
 
 Grab the latest version or report a bug on GitHub:
 
-http://github.com/flatcap/vim-save-next-file
+https://github.com/flatcap/vim-save-next-file
 
  vim:tw=78:ts=2:sw=2:et:ft=help:norl:
