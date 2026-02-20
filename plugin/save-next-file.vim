@@ -49,7 +49,7 @@ function! s:SaveNextFile() abort
 		let l:stem   = strpart (l:file, 0, len (l:file) - len (l:number))
 		let l:newnum = l:number + 1
 	endif
-	
+
 	let l:filename = l:stem . l:newnum . l:suffix
 	let l:max = l:newnum + 10000
 	while (filereadable(l:filename)) && (l:newnum < l:max)
