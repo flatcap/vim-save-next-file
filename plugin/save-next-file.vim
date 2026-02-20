@@ -23,6 +23,12 @@ endfunction
 
 function! s:SaveNextFile() abort
 	let l:file   = expand ('%')
+	if empty (l:file)
+		echohl ErrorMsg
+		echo 'SaveNextFile: buffer has no filename'
+		echohl None
+		return
+	endif
 	let l:suffix = ''
 	let l:number = s:get_number (l:file)
 
